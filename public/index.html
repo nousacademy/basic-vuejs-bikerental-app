@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Supermarket Inventory Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.10.1/css/pro.min.css">
+    <style>
+      #bikerentals_app {
+        margin-top: 20px;
+      }
+      .card {
+        margin-bottom: 20px;
+      }
+      .bike {
+        background: #0f0f88;
+        color: white;
+      }
+      .accessory {
+        background: white;
+        color: black;
+      }
+      .addon {
+        background: red;
+        color: white;
+      }
+      .card-title {
+        cursor: pointer;
+      }
+      .blink {
+        animation: blinker 1s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="bikerentals_app" class="container">
+      <div class="row">
+        <div class="col-sm" v-for="key in bikes.products">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header" v-bind:class="key.product_type">
+              {{ key.product_type }}
+            </div>
+            <img v-bind:src="key.image">
+            <div class="card-body">
+              <h5 class="card-title blink" v-on:click="selected(key.name)">{{ key.name }}</h5>
+              <p class="card-text">${{ key.price }}</p>
+            </div>
+            <!-- .card-body -->
+          </div>
+          <!-- .card -->
+        </div>
+        <!-- .col-sm -->
+      </div>
+      <!-- .row -->
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "topview-sightseeing",
+  "version": "1.0.0",
+  "description": "simple product reservation page for bike rentals",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "The Architect <thearchitect@nousacademy.com> (https://nousacademy.github.io/)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
